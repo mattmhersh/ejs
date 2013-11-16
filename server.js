@@ -11,7 +11,7 @@ var user = require('./routes/user');
 var markdown = require("markdown-js");  
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('ds061777.mongolab.com:61777/matthersh/');
+var db = monk('ejs:sWeTruT3@ds061777.mongolab.com:61777/matthersh/');
 
 //var app = module.exports = express.createServer();
 var app = express();
