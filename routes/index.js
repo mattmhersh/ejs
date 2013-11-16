@@ -15,6 +15,10 @@ exports.about = function(req, res){
   res.render('about', { title: 'About' });
 };
 
+exports.movies = function(req, res){
+  res.render('movies', { title: 'Movies' });
+};
+
 exports.contact = function(req, res){
   res.render('contact', { title: 'Contact Us' });
 };
