@@ -1,14 +1,4 @@
 extends layout
 
 block content
-	div(class='container')
-		h1= title
-		p(class='well') Welcome to #{title}
-		p
-			ul
-				li a(href='#') Genre
-
-		table
-			thead
-				tr
-					th title
+	include movies.htm
