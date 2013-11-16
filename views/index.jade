@@ -1,2 +1,9 @@
-h1= title
-p Welcome to #{title}
+extends layout
+
+block content
+	div(class='container')
+		h1= title
+		p(class='well') Welcome to #{title}
+		p
+		div(class='alert alert-info') Welcome to the new world of developing using Javascript!			
+		a(class='btn btn-primary btn-lg',role='button',href='/about') Learn More			

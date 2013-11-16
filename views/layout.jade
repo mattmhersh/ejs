@@ -1,6 +1,40 @@
-!!!
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body!= body
+doctype 5
+html(lang="en")
+	head
+		meta(charset='UTF-8')
+		meta(http-equiv='X-UA-Compatible',content='IE=edge')
+		meta(name='viewport',content='width=device-width',initial-scale='1.0')
+		meta(description='Test Website')
+		meta(author='Hersh Designs')			
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css')	 	
+		body
+			div(id='wrap')	
+				div(class='navbar navbar-fixed-top')
+					div(class='navbar-inner')
+						div(class='container')
+							div(class='navbar-header')												
+								button(type='button',class='btn btn-navbar',data-toggle='collapse',data-target='.navbar-collapse')
+									span(class='icon-bar')
+									span(class='icon-bar')
+									span(class='icon-bar')
+								a(class='brand', href='/') ExpressJS Demo
+							div(class='nav-collapse collapse')
+								ul(class='nav')
+									li(class='active') 
+										a(href='/') Home
+									li 
+										a(href='/about') About 
+									li 
+										a(href='/contact') Contact
+				div(id='container-fluid')	
+					p
+						br
+						br
+						block content
+				div(id='push')
+			div(id='footer',class='navbar navbar-inner')	
+				&copy; 2013 Hersh Designs
+script(src='http://code.jquery.com/jquery.js')
+script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js')
