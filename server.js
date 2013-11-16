@@ -21,7 +21,8 @@ var app = express();
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
-  app.use(express.bodyParser());
+  app.use(express.json());
+  app.use(express.urlencoded());
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
@@ -51,5 +52,7 @@ app.get('/movies', routes.movies);
 // HTTP Post
 app.post('/adduser', routes.adduser(db));
 
-app.listen(process.env.port || 3000);
-//console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+var port = process.env.port || 3000;
+
+app.listen(port);
+console.log('Express server listening on port ' + port);
