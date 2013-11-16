@@ -46,7 +46,7 @@ app.get('/newuser', routes.newuser);
 app.get('/markdown', routes.markdown);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
-app.get('/movies', routes.contact);
+app.get('/movies', routes.movies);
 
 // HTTP Post
 app.post('/adduser', routes.adduser(db));
