@@ -21,4 +21,38 @@
 	<p><!-- Error Message --></p>
 	<p>No records found.</p>
 
+
+	<div class='liveExample'>   
+	    <p>First name: <input data-bind='value: firstName' /></p> 
+	    <p>Last name: <input data-bind='value: lastName' /></p> 
+	    <h2>Hello, <span data-bind='text: fullName'> </span>!</h2>  
+	</div>
+
 </div>	
+
+<style>
+body { font-family: arial; font-size: 14px; }
+.liveExample { padding: 1em; background-color: #EEEEDD; border: 1px solid #CCC; max-width: 655px; }
+.liveExample input { font-family: Arial; }
+.liveExample b { font-weight: bold; }
+.liveExample p { margin-top: 0.9em; margin-bottom: 0.9em; }
+.liveExample select[multiple] { width: 100%; height: 8em; }
+.liveExample h2 { margin-top: 0.4em; font-weight: bold; font-size: 1.2em; }
+</style>
+
+
+<script src="http://knockoutjs.com/downloads/knockout-3.0.0.js" type="text/javascript" />
+<script>
+// Here's my data model
+var ViewModel = function(first, last) {
+    this.firstName = ko.observable(first);
+    this.lastName = ko.observable(last);
+ 
+    this.fullName = ko.computed(function() {
+        // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
+        return this.firstName() + " " + this.lastName();
+    }, this);
+};
+ 
+ko.applyBindings(new ViewModel("Planet", "Earth")); // This makes Knockout get to work
+</script>
